@@ -55,7 +55,7 @@ const UserAccount = () => {
           <section>
             <button onClick={()=> upVote(cat.id)}>thumbs up</button>
             <button onClick={()=> removeCat(cat.id)}>thumbs down</button>
-            <button onClick={()=> navigate('/my_cats') }>my cats</button>
+            
           </section>
         </div>
       );
@@ -68,6 +68,7 @@ const UserAccount = () => {
       <h1>User Account Settings: you must be logged to see this</h1>
       <p>Hello {user.email}</p>
       <div>{renderCat()}</div>
+      <button onClick={()=> navigate('/my_cats') }>my cats</button>
     </div>
   );
 };
