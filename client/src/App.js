@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UserAccount from "./components/shared/UserAccount";
 import FetchUser from "./components/auth/FetchUser";
+import MyCats from "./components/shared/MyCats";
 
 const App = () => (
   <>
@@ -19,6 +20,7 @@ const App = () => (
           <Route path="/register" element={<Register />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/account" element={<UserAccount />} />
+            <Route path="/my_cats" element={<MyCats />} />
           </Route>
           <Route path="/*" element={<NoMatch />} />
         </Routes>

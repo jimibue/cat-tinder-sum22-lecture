@@ -11,5 +11,14 @@ class Api::CatsController < ApplicationController
   end
 
   def update
+    # add id of like cat to liked_cat field
+    current_user.liked_cats.push(params[:id])
+    # save to db
+    current_user.save
+    render json: current_user
+  end
+
+  def my_cats
+    render json: User.liked_cats(current_user.liked_cats)
   end
 end
